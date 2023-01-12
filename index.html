@@ -315,13 +315,14 @@
 	<script src="js/main.js"></script>
 
 	<script>
-    var d = new Date(2023,7,15,16,00);
+    var d = new Date(2023,6,15,16,0,0,0);
 
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
         month: d.getMonth() + 1,
-        day: d.getDate()
+        day: d.getDate(),
+		hours: d.getHours()
     });
 
     //jQuery example
@@ -329,6 +330,7 @@
         year: d.getFullYear(),
         month: d.getMonth() + 1,
         day: d.getDate(),
+		hours: d.getHours(),
         enableUtc: false
     });
 </script>
