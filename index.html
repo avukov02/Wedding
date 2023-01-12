@@ -80,7 +80,6 @@
 							<h1>Antonio &amp; Jelena</h1>
 							<h2>Naše vjenčanje je za:</h2>
 							<div class="simply-countdown simply-countdown-one"></div>
-							<!-- <p><a href="#" class="btn btn-default btn-sm">Rezervirajte datum!</a></p> -->
 						</div>
 					</div>
 				</div>
@@ -120,58 +119,6 @@
 			</div>
 		</div>
 	</div>
-
-	<!-- <div id="fh5co-event" class="fh5co-bg" style="background-image:url(images/img_bg_3.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<span>Our Special Events</span>
-					<h2>Wedding Events</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="display-t">
-					<div class="display-tc">
-						<div class="col-md-10 col-md-offset-1">
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Main Ceremony</h3>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span>4:00 PM</span>
-										<span>6:00 PM</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span>Monday 28</span>
-										<span>November, 2016</span>
-									</div>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-							<div class="col-md-6 col-sm-6 text-center">
-								<div class="event-wrap animate-box">
-									<h3>Wedding Party</h3>
-									<div class="event-col">
-										<i class="icon-clock"></i>
-										<span>7:00 PM</span>
-										<span>12:00 AM</span>
-									</div>
-									<div class="event-col">
-										<i class="icon-calendar"></i>
-										<span>Monday 28</span>
-										<span>November, 2016</span>
-									</div>
-									<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
 
 	<div id="fh5co-couple-story">
 		<div class="container">
@@ -251,39 +198,39 @@
 			</div>
 			<div class="row animate-box">
 				<div class="col-md-10 col-md-offset-1">
-					<form class="form">
+					<form id="attendantsForm" class="form">
 						<div class="col-md-4 col-sm-4 col-md-offset-2">
 							<div class="form-group">
 								<label for="name" class="sr-only">Name</label>
 								<input type="name" class="form-control" id="name" placeholder="Ime i prezime">
-							</div>
-							<!-- <div class="form-group">
-								<label >Dijete do 3 godine</label>
-								<input type="checkbox" class="form-control" id="dijeteDo3">
-							</div> -->
-
+							</div>	
 						</div>
-						<!-- <div class="col-md-4 col-sm-4">
-							<div class="form-group">
-								<label for="email" class="sr-only">Email</label>
-								<input type="email" class="form-control" id="email" placeholder="Prezime">
-							</div>
-						</div> -->
-						<div class="col-md-4 col-sm-4">
-							<button type="submit" class="btn btn-default btn-block">Potvrdi</button>
+
+						<!-- <div class="col-md-4 col-sm-4"> -->
+							<!-- <button type="submit" onclick="showPopUp()" class="btn btn-default btn-block">Gotovo</button> -->
+						<!-- </div> -->
+						<div class="col-md-4 col-sm-4"> 
+							<button type="submit" onclick="sendMail()" class="btn btn-default btn-block">Potvrdi</button>
 						</div>
 					</form>
 				</div>
 			</div>
 
-			<!-- ime i prezime; vegeterijanac; dijete do 3 godine; dijete do 12 godine
-			posebni zahtjevi; kraj toga bi napravila plusić za dodat novu osobu i za slijedeću
+			<!-- ime i prezime; plusić ili bolje dodaj osobu botun
+				od toga broj vegeterijanaca; dijete do 3 godine; dijete do 12 godine
 		osobu ista forma (checkboxi itd)-->
-		<!-- na potvrdi modal sa ispisanim informacijama kao naš details u docsima 
-		details i _delete partial kombo i ok kao potvrdili ste.
-	Želite li izmijeniti unos?-->
+		<!-- na gotovo modal sa ispisanim informacijama kao naš details u docsima 
+		dva botuna: potvrdi i promijeni. potvrdi šalje mail, promijeni zatvara pop-up -->
 		</div>
 	</div>
+
+	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<!-- mapa za parking pored crkve -->
+		</div>
+	</div>
+
 	</div>
 
 	<div class="gototop js-top">
@@ -311,6 +258,8 @@
 
 	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
 	<script src="js/simplyCountdown.js"></script>
+	
+	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
@@ -333,8 +282,24 @@
 		hours: d.getHours(),
         enableUtc: false
     });
+	
+	function sendMail(){
+		var body = "";
+		body = body + "Name:" + document.getElementById("name").value;
+		
+			Email.send({
+			Host : "smtp.elasticemail.com",
+			Username : "jelenapeko00@gmail.com",
+			Password : "61BBB53FBBC4B8ED93104AB57B93F01C4E88",
+			To : 'Jelena.Peko@itsistemi.com',
+			From : "jelenapeko00@gmail.com",
+			Subject : "Potvrda dolaska",
+			Body : body
+		}).then(function (message) { 
+				alert(message) 
+				}); 
+	}
 </script>
-
-	</body>
+</body>
 </html>
 
