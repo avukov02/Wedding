@@ -91,9 +91,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Draga rodbino i dragi prijatelji!</h2>
+					<h2 id="pozdrav">Draga rodbino i dragi prijatelji!</h2>
                         <h3>15. srpnja 2023, Solin</h3>
-                        <p>Pozivamo Vas na naše vjenčanje!</p>
+                        <p id="poziv">Pozivamo Vas na naše vjenčanje!</p>
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
@@ -140,6 +140,11 @@
 								</div>
 								<div class="timeline-body">
 									<p>Catering prije ceremonije će se održati u objektu "Kavana Zvonimir."</p>
+									 <a target="_blank" href="https://goo.gl/maps/BnbaWLh2NszzpocH9"><img style="width: 38px;" src="https://img.icons8.com/color/512/place-marker.png"></a>
+									 <i>Ul. kralja Zvonimira 50 </i>
+									 <br/>
+									 <a target="_blank" href="https://goo.gl/maps/rFp79hG658tRNwhz8"><img style="width: 38px;" src="https://img.icons8.com/color/512/place-marker.png"></a>
+									 <a><i><u>Parking</u></i></a>
 								</div>
 							</div>
 						</li>
@@ -164,6 +169,8 @@
 								</div>
 								<div class="timeline-body">
 									<p>Počinjemo s pićem dobrodošlice ispred ulaza u Porta Salonae salu za vjenčanja u hotelu Salona Palace.</p>
+									<a target="_blank" href="https://goo.gl/maps/txpRugmJH6bwykCG8"><img style="width: 38px;" src="https://img.icons8.com/color/512/place-marker.png"></a>
+									<i>Ul. don Frane Bulića 87</i>
 								</div>
 							</div>
 						</li>
@@ -182,7 +189,7 @@
 					<!-- <p>Ovdje ćete također moći podijeliti fotografije nakon vjenčanja. Unaprijed zahvaljujemo na tome!</p> -->
 				<!-- </div> -->
 
-				<!-- <!-- Napraviti formu za upload slika koje gosti eventualno mogu dodati --> -->
+				<!-- Napraviti formu za upload slika koje gosti eventualno mogu dodati -->
 			<!-- </div> -->
 		<!-- </div> -->
 	<!-- </div> -->
@@ -206,11 +213,11 @@
 							</div>	
 						</div>
 
-						<!-- <div class="col-md-4 col-sm-4"> -->
-							<!-- <button type="submit" onclick="showPopUp()" class="btn btn-default btn-block">Gotovo</button> -->
-						<!-- </div> -->
+						<!-- <div class="col-md-4 col-sm-4">
+							<button  onclick="showPopUp()" class="btn btn-default btn-block">Gotovo</button>
+						</div> -->
 						<div class="col-md-4 col-sm-4"> 
-							<button type="submit" onclick="sendMail()" class="btn btn-default btn-block">Potvrdi</button>
+							<button type="submit" onclick="sendMail(event)" class="btn btn-default btn-block">Potvrdi</button>
 						</div>
 					</form>
 				</div>
@@ -266,6 +273,52 @@
 	<script>
     var d = new Date(2023,6,15,16,0,0,0);
 
+	$(document).ready(function () {
+		const queryString = window.location.search;
+		console.log(queryString);
+		const urlParams = new URLSearchParams(queryString);
+		const hello = urlParams.get('p')
+
+		if(hello != null)
+		{
+			console.log(hello);
+			var pozdrav = "";
+			if (hello.includes(" i "))
+			{
+				pozdrav = "Dragi " + hello;
+			}
+			else if (hello.includes("obitelj"))
+			{
+				var helloSplit = hello.split(" ");
+				var prezime = helloSplit[helloSplit.length - 1];
+				pozdrav = "Draga obitelji " + prezime + "!";
+			}
+			else
+			{
+				if(hello.includes("Dubi"))
+					pozdrav = "Dragi Dubi!";
+				else if (hello.includes("Boze"))
+					pozdrav = "Dragi Bože!";
+				else if (hello.includes("Dena"))
+					pozdrav = "Dragi Dena!";
+				else if (hello.includes("Tadic"))
+					pozdrav = "Dragi Tadiću!";
+				else if (hello.includes("Garmaz"))
+					pozdrav = "Dragi Filipe!";
+				else if (hello.includes("Anica"))
+					pozdrav = "Draga Anice!";
+				else if (hello.includes("Matea"))
+					pozdrav = "Draga Matea!";
+				else if (hello.includes("Franka"))
+					pozdrav = "Draga Franka!";
+
+				$("#poziv").text("Pozivamo te na naše vjenčanje!");
+			}
+
+			$("#pozdrav").text(pozdrav);
+		}
+    })
+
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
@@ -283,7 +336,8 @@
         enableUtc: false
     });
 	
-	function sendMail(){
+	function sendMail(e){
+		e.preventDefault();
 		var body = "";
 		body = body + "Name:" + document.getElementById("name").value;
 		
