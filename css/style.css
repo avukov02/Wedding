@@ -1565,6 +1565,7 @@ margin-right: 3px;
   height: 25px;
   cursor: pointer;
   text-decoration: none;
+  display: none
 }
 .fh5co-nav-toggle.active i::before, .fh5co-nav-toggle.active i::after {
   background: #444;
