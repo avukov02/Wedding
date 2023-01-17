@@ -220,6 +220,32 @@
 							<button type="submit" onclick="sendMail(event)" class="btn btn-default btn-block">Potvrdi</button>
 						</div>
 					</form>
+
+					<form>
+						<label for="name">Name:</label>
+						<input type="text" id="name" name="name"><br><br>
+						<label for="num_people">Number of People:</label>
+						<select id="num_people" name="num_people" onchange="generateInputs()">
+						  <option value="1">1</option>
+						  <option value="2">2</option>
+						  <option value="3">3</option>
+						  <option value="4">4</option>
+						  <option value="5">5</option>
+						</select><br><br>
+						<div id="input_fields"></div>
+						<input type="submit" value="Submit">
+					  </form>
+					  
+					  <script>
+						function generateInputs() {
+						  var numPeople = document.getElementById("num_people").value;
+						  var inputFields = document.getElementById("input_fields");
+						  inputFields.innerHTML = "";
+						  for (var i = 1; i <= numPeople; i++) {
+							inputFields.innerHTML += "<label for='name" + i + "'>Name " + i + ":</label><input type='text' id='name" + i + "' name='name" + i + "'><br><br>";
+						  }
+						}
+					  </script>
 				</div>
 			</div>
 

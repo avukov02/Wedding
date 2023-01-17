@@ -1096,6 +1096,22 @@ form label {
     height: 120px;
     margin: 0 auto;
   }
+
+  .simply-countdown > .simply-section {
+    width: 50px;
+    height: 50px;
+  }
+
+  .simply-countdown > .simply-section .simply-amount {
+    font-size: 15px;
+    margin-bottom: 28px;
+    /* amounts */
+  }
+
+  .simply-countdown > .simply-seconds-section .simply-amount {
+margin-right: 3px;
+  /* words */
+}
 }
 .couple-half .groom {
   float: right;
@@ -1840,4 +1856,22 @@ form label {
   opacity: 0;
 }
 
-/*# sourceMappingURL=style.css.map */
+.roundbutton{
+  border: none;
+  color: white;
+  background-color: #F14E95;
+}
+
+.num_people {
+width: 20px !important;
+}
+
+.potvrdi{
+  margin-top: 20px;
+  text-align: center;
+}
+
+.gosti{
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
