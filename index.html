@@ -475,8 +475,8 @@
 		if(hello != null)
 		{
 			SetPozdravIPoruka(hello);
-			
 		}
+		// urlParams.delete('p')
     })
 
     // default example
@@ -510,7 +510,17 @@
 		document.getElementById("djeca3Count").innerHTML + " Broj djece do 12 godina: " + 
 		document.getElementById("djeca12Count").innerHTML;
 
-        Email.send({
+		// SendWithPostmarkApp(body);
+        var message = EmailSend(body);
+		if(message != "OK")
+		{
+			HandleEmailSendParametersError(body);
+		}
+      }
+
+	function EmailSend(body){
+		var result = "OK";
+		Email.send({
           Host: "smtp.elasticemail.com",
           Username: "jelenapeko00@gmail.com",
           Password: "61BBB53FBBC4B8ED93104AB57B93F01C4E88",
@@ -519,9 +529,72 @@
           Subject: "Potvrda dolaska",
           Body: body,
         }).then(function (message) {
-          alert(message);
+			result = message;
+          	alert(message);
         });
-      }
+		return result;
+	}  
+
+	function HandleEmailSendParametersError(body){
+		var message = "";
+		const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+		const hello = urlParams.get('p');
+		if(hello != null)
+		{
+			urlParams.delete('p');
+			message = EmailSend(body);
+
+			if(message != "OK")
+			{
+				// SendWithPostmarkApp();
+				
+				//handle other way, other host, other something
+			}
+		}
+	}
+
+	// function SendWithPostmarkApp(body){
+	// 	$.ajax({
+	// 				url: 'http://api.postmarkapp.com/email',
+	// 				dataType: 'json',
+	// 				contentType: 'application/json',
+	// 				type: 'POST',
+	// 				data:{
+	// 					From: "jelenapeko00@gmail.com",
+	// 					To: "Jelena.Peko@itsistemi.com",
+	// 					Subject: "Potvrda dolaska",
+    //       				TextBody: body,
+	// 					Headers: [{
+	// 						"Name": "X-Postmark-Server-Token",
+	// 						"Value": "229dc4c5-7161-4fc8-be22-c0942489d2d9"
+	// 					},{
+	// 						"Name": "Access-Control-Allow-Origin",
+	// 						"Value": "*"
+	// 					},{
+	// 						"Name": "Accept",
+	// 						"Value": "application/json"
+	// 					},{
+	// 						"Name": "Access-Control-Allow-Headers",
+	// 						"Value": 'X-Postmark-Server-Token, Accept, Access-Control-Allow-Origin'
+	// 					}]
+	// 				},
+	// 				success: function(data, textStatus, jQxhr)
+	// 				{
+	// 					if(data.IsSuccessful)
+	// 					{
+	// 						var a = 1;
+	// 					}
+	// 					else{
+	// 						var a = 1;
+	// 					}
+	// 				},
+	// 				error: function(message){
+	// 					alert(message);
+	// 				}
+
+	// 			})
+	// }
 
 	function SetPozdravIPoruka(hello)
 	{
