@@ -1028,6 +1028,16 @@ form label {
 @media screen and (max-width: 768px) {
   .couple-wrap {
     width: 100%;
+	display: inline-block;
+	size: auto;
+  }
+  .couple-half {
+	  display: inline-block;
+	  size: auto;
+  }
+  .heart{
+	  display: inline-block;
+	  size: auto;
   }
 }
 
@@ -1051,7 +1061,7 @@ form label {
 }
 @media screen and (max-width: 768px) {
   .heart {
-    display: none;
+    /* display: none; */
   }
 }
 

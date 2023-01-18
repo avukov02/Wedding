@@ -101,13 +101,14 @@
 		</div>
 	</header>
 
-	<div id="fh5co-couple">
+	<div id="fh5co-couple" style="padding-bottom: 0%;">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<h2 id="pozdrav">Draga rodbino i dragi prijatelji!</h2>
-                        <h3>15. srpnja 2023, Solin</h3>
-                        <p id="poziv">Pozivamo Vas na naše vjenčanje!</p>
+					<p id="poziv1">Veliko nam je zadovoljstvo pozvati Vas na naše vjenčanje</p>
+					<p id="poziv2">te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!</p>
+					<h3>15. srpnja 2023, Solin</h3>
 				</div>
 			</div>
 			<div class="couple-wrap animate-box">
@@ -117,8 +118,7 @@
 					</div>
 					<div class="desc-groom">
 						<h3>Antonio Šošić</h3>
-						<p><i><img style="width: 30px;" src="images/phone.png"></i> 099 333 9544</p>
-						<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
+						<!-- <p><i><img style="width: 30px;" src="images/phone.png"></i> 099 333 9544</p> -->
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2" ></i></p>
@@ -128,22 +128,20 @@
 					</div>
 					<div class="desc-bride">
 						<h3>Jelena Peko</h3>
-						<p><i><img style="width: 30px;" src="images/phone.png"></i> 097 723 2905</p>
-						<!-- <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove</p> -->
+						<!-- <p><i><img style="width: 30px;" src="images/phone.png"></i> 097 723 2905</p> -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-couple-story">
+	<div id="fh5co-couple-story" style="padding-top: 0%;">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<!-- <span>Our Special Events</span> -->
+			<!-- <div class="row"> -->
+				<!-- <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
 					<h2>Važni termini</h2>
-				</div>
-			</div>
+				</div> -->
+			<!-- </div> -->
 			<div class="row">
 				<div class="col-md-12 col-md-offset-0">
 					<ul class="timeline animate-box">
@@ -218,7 +216,7 @@
 			<div class="row animate-box">
 				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
 					<h2>Potvrdite Vaš dolazak</h2>
-					<p>Molimo dodajte Vaša cijenjena imena ponaosob i popunite kratku formu. Unaprijed hvala :)</p>
+					<p>Molimo popunite kratku formu i unesite svoje ime i prezime i imena i prezimena svih koji dolaze s vama. Unaprijed hvala :)</p>
 				</div>
 			</div>
 			<div class="row animate-box">
@@ -396,6 +394,32 @@
 		</div>
 	</div>
 
+	<div id="fh5co-couple" style="margin-top: 10%;">
+		<div class="container">
+			<div class="couple-wrap animate-box">
+				<div class="couple-half">
+					<div class="groom" style="border: 1px; border-color: black;">
+						<img src="images/groom.png" alt="groom" class="img-responsive">
+					</div>
+					<div class="desc-groom">
+						<h3>Antonio Šošić</h3>
+						<p><i><img style="width: 30px;" src="images/phone.png"></i> 099 333 9544</p>
+					</div>
+				</div>
+				<p class="heart text-center"><i class="icon-heart2" ></i></p>
+				<div class="couple-half">
+					<div class="bride">
+						<img src="images/bride.png" alt="groom" class="img-responsive">
+					</div>
+					<div class="desc-bride">
+						<h3>Jelena Peko</h3>
+						<p><i><img style="width: 30px;" src="images/phone.png"></i> 097 723 2905</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container">
@@ -450,40 +474,8 @@
 
 		if(hello != null)
 		{
-			console.log(hello);
-			var pozdrav = "";
-			if (hello.includes(" i "))
-			{
-				pozdrav = "Dragi " + hello;
-			}
-			else if (hello.includes("obitelj"))
-			{
-				var helloSplit = hello.split(" ");
-				var prezime = helloSplit[helloSplit.length - 1];
-				pozdrav = "Draga obitelji " + prezime + "!";
-			}
-			else
-			{
-				if(hello.includes("Dubi"))
-					pozdrav = "Dragi Dubi!";
-				else if (hello.includes("Boze"))
-					pozdrav = "Dragi Bože!";
-				else if (hello.includes("Dena"))
-					pozdrav = "Dragi Dena!";
-				else if (hello.includes("Tadic"))
-					pozdrav = "Dragi Tadiću!";
-				else if (hello.includes("Garmaz"))
-					pozdrav = "Dragi Filipe!";
-				else if (hello.includes("Anica"))
-					pozdrav = "Draga Anice!";
-				else if (hello.includes("Matea"))
-					pozdrav = "Draga Matea!";
-				else if (hello.includes("Franka"))
-					pozdrav = "Draga Franka!";
-
-				$("#poziv").text("Pozivamo te na naše vjenčanje!");
-			}
-			$("#pozdrav").text(pozdrav);
+			SetPozdravIPoruka(hello);
+			
 		}
     })
 
@@ -530,6 +522,103 @@
           alert(message);
         });
       }
+
+	function SetPozdravIPoruka(hello)
+	{
+		var pozdrav = "";
+
+		if(hello.startsWith("o "))
+		{
+			var helloSplit = hello.split(" ");
+			var obitelj = helloSplit[helloSplit.length - 1];
+			pozdrav = "Draga obitelji ";
+			if(obitelj == "Kardum"){ pozdrav = pozdrav + "Kardum!"; }
+			else if (obitelj == "Kacunko"){ pozdrav = pozdrav + "Kaćunko!"; }
+			else if (obitelj == "Matijevic"){ pozdrav = pozdrav + "Matijević!"; }				
+			else if (obitelj == "Jozic"){ pozdrav = pozdrav + "Jozić!"; }				
+			else if (obitelj == "Grgurevic"){ pozdrav = pozdrav + "Grgurević!"; }				
+			else if (obitelj == "Satara"){ pozdrav = pozdrav + "Šatara!"; }				
+			else if (obitelj == "Grubisin"){ pozdrav = pozdrav + "Grubišin!"; }				
+			else if (obitelj == "Simic"){ pozdrav = pozdrav + "Šimić!"; }				
+			else if (obitelj == "Labrovic"){ pozdrav = pozdrav + "Labrović!"; }				
+			else if (obitelj == "Peko"){ pozdrav = pozdrav + "Peko!"; }				
+			else if (obitelj == "Rebic"){ pozdrav = pozdrav + "Rebić!"; }				
+			else if (obitelj == "Pavlica"){ pozdrav = pozdrav + "Pavlica!"; }				
+			else if (obitelj == "Essert"){ pozdrav = "Dragi Esserti!"; }
+			$("#poziv1").text("Veliko nam je zadovoljstvo pozvati Vas na naše vjenčanje");
+			$("#poziv2").text("te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!");				
+		}
+		else if (!hello.includes(" "))
+		{
+			$("#poziv1").text("Veliko nam je zadovoljstvo pozvati te na naše vjenčanje");
+			$("#poziv2").text("te se nadamo da ćeš nam moći dodatno uljepšati taj poseban dan!");
+
+			if (hello == "Anica")
+				pozdrav = "Draga kumo!";
+			else if (hello == "Anja" || hello == "Ana" || hello == "Matea" || hello == "Franka")
+				pozdrav = "Draga " + hello + "!";
+			else if (hello == "Karlo" || hello == "Moka" || hello == "Jure" || hello == "Matija" || hello == "Neno" || hello == "Brane" || hello == "Dubi")
+				pozdrav = "Dragi" + hello + "!";
+			else if (hello == "Vinka")
+				pozdrav = "Draga rodice!";
+			else if (hello == "Josip")
+				pozdrav = "Dragi Josipe!";
+			else if (hello == "Boze")
+				pozdrav = "Dragi Bože!";
+			else if (hello == "Tadic")
+				pozdrav = "Dragi Tadiću!";
+			else if (hello == "Garmaz")
+				pozdrav = "Dragi Filipe!";
+			else if (hello == "Feheri")
+			{
+				pozdrav = "Dragi naši Feheri!";
+				$("#poziv1").text("Veliko nam je zadovoljstvo pozvati vas na naše vjenčanje");
+				$("#poziv2").text("te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!");
+			}
+			else if (hello == "Knezevic")
+			{
+				pozdrav = "Dragi Stipe, Josipa i Josipe Petre!";
+				$("#poziv1").text("Veliko nam je zadovoljstvo pozvati vas na naše vjenčanje");
+				$("#poziv2").text("te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!");
+			}
+			else if (hello == "Seka")
+			{
+				pozdrav = "Dragi moji Andjela, Seko i Gorane!";
+				$("#poziv1").text("Veliko nam je zadovoljstvo pozvati vas na naše vjenčanje");
+				$("#poziv2").text("te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!");
+			}
+		}
+		else{
+			$("#poziv1").text("Veliko nam je zadovoljstvo pozvati Vas na naše vjenčanje");
+			$("#poziv2").text("te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!");	
+			pozdrav = "Dragi ";
+			if(hello == "") { pozdrav = pozdrav + "";}
+			else if(hello == "Danijela i Josip") { pozdrav = pozdrav + "Danijela & Josipe!";}
+			else if(hello == "Sanja i Marin") { pozdrav = pozdrav + "Sanjo & Marine!";}
+			else if(hello == "Mia i Bruno") { pozdrav = pozdrav + "Mia & Bruno!";}
+			else if(hello == "ujac i ujna") { pozdrav = pozdrav + "ujče i ujna!";}
+			else if(hello == "Ana i Soco") { pozdrav = pozdrav + "Ana & Sočo!";}
+			else if(hello == "Andja i Teo") { pozdrav = pozdrav + "Anđo & Teo!";}
+			else if(hello == "Marija i Zvonko") { pozdrav = pozdrav + "Marija i doktore!";}
+			else if(hello == "Tisja i Igor") { pozdrav = pozdrav + "Tisja & Igore!";}
+			else if(hello == "Nela i Ivan") { pozdrav = pozdrav + "Nela & Ivane!";}
+			else if(hello == "Karla i Miro") { pozdrav = pozdrav + "Karla & Miro!";}
+			else if(hello == "Anita i Niksa") { pozdrav = pozdrav + "Anita i Nikša!";}
+			else if(hello == "Marijana i Arijen") { pozdrav = pozdrav + "Marijana i Arijen!";}
+			else if(hello == "Tea i Ivan") { pozdrav = pozdrav + "Tea & Ivane!";}
+			else if(hello == "mama i tata") { pozdrav = pozdrav + "mama i tata!";}
+			else if(hello == "Mijo i teta") { pozdrav = pozdrav + "Mijo i draga tete!";}
+			else if(hello == "Dijana i Zoran") { pozdrav = pozdrav + "Dijo & Zoki!";}
+			else if(hello == "Ada i Momo") { pozdrav = pozdrav + "Ada i Momo!";}
+			else if(hello == "Rade i Katja") { pozdrav = pozdrav + "Rade & Katja!";}
+			else if(hello == "Rahela i Svale") { pozdrav = pozdrav + "Rahe & Svale!";}
+			else if(hello == "Dolores i Ante") { pozdrav = pozdrav + "Dolores & Ante!";}
+			else if(hello == "Dora i Josko") { pozdrav = pozdrav + "Dora & Joško!";}
+		}
+		//TODO POZIV
+		$("#pozdrav").text(pozdrav);
+	}
+
 </script>
 </body>
 </html>
