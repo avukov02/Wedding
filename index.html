@@ -42,6 +42,8 @@
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
 
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<link
       href="https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700"
       rel="stylesheet"
@@ -90,9 +92,9 @@
 					<div class="display-t">
 						<div class="display-tc animate-box" data-animate-effect="fadeIn">
 							<div style="background-color: rgba(0,0,5,0.2);">
-								<h1>Antonio &amp; Jelena</h1>
+								<h1>Jelena &amp; Antonio</h1>
 								<h2>Naše vjenčanje je za:</h2>
-								<div class="simply-countdown simply-countdown-one"></div>
+								<div class="simply-countdown simply-countdown-one firstrow"></div>
 							</div>
 						</div>
 					</div>
@@ -104,7 +106,7 @@
 	<div id="fh5co-couple" style="padding-bottom: 0%;">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box firstrow">
 					<h2 id="pozdrav">Draga rodbino i dragi prijatelji!</h2>
 					<p id="poziv1">Veliko nam je zadovoljstvo pozvati Vas na naše vjenčanje</p>
 					<p id="poziv2">te se nadamo da ćete nam moći dodatno uljepšati taj poseban dan!</p>
@@ -142,7 +144,7 @@
 					<h2>Važni termini</h2>
 				</div> -->
 			<!-- </div> -->
-			<div class="row">
+			<div class="row vremenskacrta">
 				<div class="col-md-12 col-md-offset-0">
 					<ul class="timeline animate-box">
 						<li class="animate-box">
@@ -212,15 +214,16 @@
 
 	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
-		<div class="container">
+		<div class="container2">
 			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading firstrow">
 					<h2>Potvrdite Vaš dolazak</h2>
 					<p>Molimo popunite kratku formu i unesite svoje ime i prezime i imena i prezimena svih koji dolaze s vama. Unaprijed hvala :)</p>
 				</div>
 			</div>
-			<div class="row animate-box">
-				<div class="col-md-10 col-md-offset-1">
+			<div class="row animate-box secondrow">
+				<!-- <div class="col-md-10 col-md-offset-1"> -->
+					<div>
               <form id="attendantsForm" class="form">
                 <input
                   type="text"
@@ -228,94 +231,63 @@
                   class="form-control"
                   placeholder="Upišite svoje ime"
                 />
-                <br />
-				<br />
-                <label for="guestCount">Broj gostiju:</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-                  onclick="decrementGuest()"
-                >
-                  -
-                </button>
+		 <div class="d-flex justify-content-between">
+			<div>
+                <label for="guestCount">Broj gostiju u pratnji:</label>
+			</div>
+			<div>
+				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementGuest()"/>
                 <label id="guestCount" class="num_people">0</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-                  onclick="incrementGuest()"
-                >
-                  +
-                </button>
-                <br />
-				<br />
+				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementGuest()"/>
+			</div>
+			</div>
                 <div id="inputFields"></div>
-				<label for="vegeterijanciCount">Vegeterijanci:</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-				  onclick="decrementVegans()"
-                >
-                  -
-                </button>
+
+				<div class="d-flex justify-content-between">
+					<div>
+						<label for="vegeterijanciCount">Vegeterijanci:</label>
+					</div>
+					<div>
+				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementVegans()"/>
                 <label id="vegeterijanciCount">0</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-				  onclick="incrementVegans()"
-                >
-                  +
-                </button>
-                <br />
-				<br />
-                <div id="inputFields"></div>
-				<label for="djeca3Count">Dijete do 3 godine:</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-				  onclick="decrementDjeca3()"
-                >
-                  -
-                </button>
+				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementVegans()"/>
+					</div>
+				</div>
+				<div class="d-flex justify-content-between">
+					<div>
+						<label for="djeca3Count">Dijete do 3 godine:</label>
+					</div>
+					<div>
+				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementDjeca3()"/>
                 <label id="djeca3Count">0</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-				  onclick="incrementDjeca3()"
-                >
-                  +
-                </button>
-                <br />
-				<br />
-                <div id="inputFields"></div>
-				<label for="djeca12Count">Dijete do 12 godina:</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-				  onclick="decrementDjeca12()"
-                >
-                  -
-                </button>
+				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementDjeca3()"/>
+					</div>
+				</div>
+				<div class="d-flex justify-content-between">
+					<div>
+						<label for="djeca12Count">Dijete do 12 godina:</label>
+					</div>
+					<div>
+				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementDjeca12()"/>
                 <label id="djeca12Count">0</label>
-                <button
-                  type="button"
-                  class="roundbutton"
-				  onclick="incrementDjeca12()"
-                >
-                  +
-                </button>
-                <br />
+				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementDjeca12()"/>
+					</div>
+				</div>
+			</div>
                 <!-- <div class="col-md-4 col-sm-4">
 							<button  onclick="showPopUp()" class="btn btn-default btn-block">Gotovo</button>
 						</div> -->
-                <div class="col-md-4 col-sm-4">
+						<div>
+                <div class = "potvrdidiv">
                   <button
                     type="submit"
                     onclick="sendMail(event)"
-                    class="btn btn-default btn-block potvrdi"
+                    class="btn btn-default potvrdi"
                   >
                     Potvrdi
                   </button>
                 </div>
+			</div>
               </form>
 					  
 					  <script>
@@ -366,7 +338,7 @@
                   inputField.setAttribute("class", "form-control gosti");
                   inputField.setAttribute(
                     "placeholder",
-                    "Gost " + guestCount + " Ime"
+                    "Upišite ime " + guestCount + ". gosta koji dolazi s Vama"
                   );
                   gosti.appendChild(inputField);
                 }
@@ -377,13 +349,13 @@
                     document.getElementById("guestCount").innerHTML =
                       guestCount;
                     let gosti = document.getElementById("inputFields");
-                    let inputFields = document.getElementsByTagName("input");
+                    let inputFields = gosti.getElementsByTagName("input");
                     let lastInputField = inputFields[inputFields.length - 1];
                     gosti.removeChild(lastInputField);
                   }
                 }
               </script>
-            </div>
+            <!-- </div> -->
           </div>
 
 			<!-- ime i prezime; plusić ili bolje dodaj osobu botun
@@ -433,6 +405,7 @@
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -458,6 +431,8 @@
 	<script src="https://smtpjs.com/v3/smtp.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
 
 	<script>
     var d = new Date(2023,6,15,16,0,0,0);
