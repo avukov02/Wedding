@@ -336,6 +336,13 @@ h1, h2, h3, h4, h5, h6, figure {
     height: 600px;
   }
 }
+
+@media screen and (max-width: 1000px) and (min-width: 768px) {
+  .odbrojavanje {
+    display: flex;
+    justify-content: center;
+  }
+}
 .fh5co-cover.fh5co-cover-sm {
   height: 600px;
 }
