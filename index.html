@@ -113,13 +113,13 @@
 					<h3>15. srpnja 2023, Solin</h3>
 				</div>
 			</div>
-			<div class="couple-wrap animate-box">
+			<div class="couple-wrap animate-box" style="width: 100%;">
 				<div class="couple-half">
 					<div class="groom" style="border: 1px; border-color: black;">
 						<img src="images/groom.png" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
-						<h3>Antonio Šošić</h3>
+						<h3>Antonio</h3>
 						<!-- <p><i><img style="width: 30px;" src="images/phone.png"></i> 099 333 9544</p> -->
 					</div>
 				</div>
@@ -129,7 +129,7 @@
 						<img src="images/bride.png" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
-						<h3>Jelena Peko</h3>
+						<h3>Jelena</h3>
 						<!-- <p><i><img style="width: 30px;" src="images/phone.png"></i> 097 723 2905</p> -->
 					</div>
 				</div>
@@ -225,23 +225,32 @@
 				<!-- <div class="col-md-10 col-md-offset-1"> -->
 					<div>
               <form id="attendantsForm" class="form">
-                <input
-                  type="text"
-                  id="name"
-                  class="form-control"
-                  placeholder="Ime i prezime"
-                />
-		 <div class="d-flex justify-content-between">
-			<div>
+				<!-- <div id="attendantsTable" style="display: table; width: 100%;"> -->
+					<!-- <div style="display: table-cell;"> -->
+					<input
+					type="text"
+					id="name"
+					class="form-control"
+					placeholder="Ime i prezime"
+					style="border-radius: 20px; color:white"
+					/>
+			<!-- </div> -->
+			<!-- <div style="display: table-cell;"> -->
+			<!-- </div> -->
+			<!-- </div> -->
+		 <!-- <div class="d-flex justify-content-between"> -->
+			<!-- <div>
                 <label for="guestCount">Broj gostiju u pratnji:</label>
-			</div>
-			<div>
+			</div> -->
+			<!-- <div>
 				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementGuest()"/>
                 <label id="guestCount" class="num_people">0</label>
 				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementGuest()"/>
-			</div>
-			</div>
+			</div> -->
+			<!-- </div> -->
                 <div id="inputFields"></div>
+
+				<input type="button" value="+ Dodaj osobu" class="btn btn-default" style="border-radius: 30px; width: auto; margin-top: 5%;" data-field="quantity" onclick="incrementGuest()"/>
 
 				<div class="d-flex justify-content-between">
 					<div>
@@ -255,7 +264,7 @@
 				</div>
 				<div class="d-flex justify-content-between">
 					<div>
-						<label for="djeca3Count" style="color: white;">Dijete do 3 godine:</label>
+						<label for="djeca3Count" style="color: white;">Djeca do 3 godine:</label>
 					</div>
 					<div>
 				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementDjeca3()"/>
@@ -265,7 +274,7 @@
 				</div>
 				<div class="d-flex justify-content-between">
 					<div>
-						<label for="djeca12Count" style="color: white;">Dijete do 12 godina:</label>
+						<label for="djeca12Count" style="color: white;">Djeca do 12 godina:</label>
 					</div>
 					<div>
 				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementDjeca12()"/>
@@ -331,15 +340,19 @@
 
                 function incrementGuest() {
                   guestCount++;
-                  document.getElementById("guestCount").innerHTML = guestCount;
+                //   document.getElementById("guestCount").innerHTML = guestCount;
+				// let inputFieldDiv = document.createElement("div");
+				// inputFieldDiv.setAttribute("style", "display: table-cell;")
                   let inputField = document.createElement("input");
                   let gosti = document.getElementById("inputFields");
                   inputField.setAttribute("type", "text");
+				  inputField.setAttribute("style", "border-radius: 20px; margin-top:5%; margin-bottom:0px; color:white");
                   inputField.setAttribute("class", "form-control gosti");
                   inputField.setAttribute(
                     "placeholder",
                     "Ime i prezime"
                   );
+				//   inputFieldDiv.appendChild(inputField);
                   gosti.appendChild(inputField);
                 }
 
@@ -368,14 +381,15 @@
 
 	<div id="fh5co-couple" style="margin-top: 10%;">
 		<div class="container">
-			<div class="couple-wrap animate-box">
+			<div class="couple-wrap animate-box" style="width: 100%;">
 				<div class="couple-half">
 					<div class="groom" style="border: 1px; border-color: black;">
 						<img src="images/groom.png" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-groom">
-						<h3>Antonio Šošić</h3>
-						<p><i><img style="width: 30px;" src="images/phone.png"></i> 099 333 9544</p>
+						<h3><img style="width: 20px; padding-left: 0%;" src="images/phone.png"> Antonio</h3>
+						<p style="padding-left: 0%;">099 333 9544</p>
+						<!-- <p><i><img style="width: 30px; margin-left:0px; padding-left: 0%;" src="images/phone.png"></i> 099 333 9544</p> -->
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2" ></i></p>
@@ -384,8 +398,9 @@
 						<img src="images/bride.png" alt="groom" class="img-responsive">
 					</div>
 					<div class="desc-bride">
-						<h3>Jelena Peko</h3>
-						<p><i><img style="width: 30px;" src="images/phone.png"></i> 097 723 2905</p>
+						<h3><img style="width: 20px;" src="images/phone.png"> Jelena</h3>
+						<p style="padding-right: 0%; margin-right: 0px;">097 723 2905</p>
+						<!-- <p><i><img style="width: 30px; margin-right: 0px;" src="images/phone.png"></i> 097 723 2905</p> -->
 					</div>
 				</div>
 			</div>
@@ -477,10 +492,9 @@
 		var elementi = document.getElementsByClassName("gosti");
 		var imena = "";
 		for (var i = 0; i < elementi.length; i++) {
-        imena = imena + " " +  elementi[i].value;
+        imena = imena + " " +  elementi[i].value + ",";
 		}
-        body = body + "Name:" + document.getElementById("name").value + " Broj gostiju: " +document.getElementById("guestCount").innerHTML + 
-		" Imena gostiju: " + imena + " Broj vegeterijanaca: " + 
+        body = body + "Name:" + document.getElementById("name").value + "," + imena + " Broj vegeterijanaca: " + 
 		document.getElementById("vegeterijanciCount").innerHTML + " Broj djece do 3 godine: " + 
 		document.getElementById("djeca3Count").innerHTML + " Broj djece do 12 godina: " + 
 		document.getElementById("djeca12Count").innerHTML;
