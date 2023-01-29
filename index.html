@@ -229,7 +229,7 @@
                   type="text"
                   id="name"
                   class="form-control"
-                  placeholder="Upišite svoje ime"
+                  placeholder="Ime i prezime"
                 />
 		 <div class="d-flex justify-content-between">
 			<div>
@@ -245,31 +245,31 @@
 
 				<div class="d-flex justify-content-between">
 					<div>
-						<label for="vegeterijanciCount">Vegeterijanci:</label>
+						<label for="vegeterijanciCount" style="color: white;">Vegeterijanci:</label>
 					</div>
 					<div>
 				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementVegans()"/>
-                <label id="vegeterijanciCount">0</label>
+                <label id="vegeterijanciCount" style="color: white;">0</label>
 				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementVegans()"/>
 					</div>
 				</div>
 				<div class="d-flex justify-content-between">
 					<div>
-						<label for="djeca3Count">Dijete do 3 godine:</label>
+						<label for="djeca3Count" style="color: white;">Dijete do 3 godine:</label>
 					</div>
 					<div>
 				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementDjeca3()"/>
-                <label id="djeca3Count">0</label>
+                <label id="djeca3Count" style="color: white;">0</label>
 				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementDjeca3()"/>
 					</div>
 				</div>
 				<div class="d-flex justify-content-between">
 					<div>
-						<label for="djeca12Count">Dijete do 12 godina:</label>
+						<label for="djeca12Count" style="color: white;">Dijete do 12 godina:</label>
 					</div>
 					<div>
 				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementDjeca12()"/>
-                <label id="djeca12Count">0</label>
+                <label id="djeca12Count" style="color: white;">0</label>
 				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementDjeca12()"/>
 					</div>
 				</div>
@@ -338,7 +338,7 @@
                   inputField.setAttribute("class", "form-control gosti");
                   inputField.setAttribute(
                     "placeholder",
-                    "Upišite ime " + guestCount + ". gosta koji dolazi s Vama"
+                    "Ime i prezime"
                   );
                   gosti.appendChild(inputField);
                 }
