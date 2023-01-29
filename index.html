@@ -120,7 +120,6 @@
 					</div>
 					<div class="desc-groom">
 						<h3>Antonio</h3>
-						<!-- <p><i><img style="width: 30px;" src="images/phone.png"></i> 099 333 9544</p> -->
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2" ></i></p>
@@ -130,7 +129,6 @@
 					</div>
 					<div class="desc-bride">
 						<h3>Jelena</h3>
-						<!-- <p><i><img style="width: 30px;" src="images/phone.png"></i> 097 723 2905</p> -->
 					</div>
 				</div>
 			</div>
@@ -139,11 +137,6 @@
 
 	<div id="fh5co-couple-story" style="padding-top: 0%;">
 		<div class="container">
-			<!-- <div class="row"> -->
-				<!-- <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box">
-					<h2>Važni termini</h2>
-				</div> -->
-			<!-- </div> -->
 			<div class="row vremenskacrta">
 				<div class="col-md-12 col-md-offset-0">
 					<ul class="timeline animate-box">
@@ -198,20 +191,6 @@
 		</div>
 	</div>
 
-	<!-- <div id="fh5co-gallery" class="fh5co-section-gray"> -->
-		<!-- <div class="container"> -->
-			<!-- <div class="row"> -->
-				<!-- <div class="col-md-8 col-md-offset-2 text-center fh5co-heading animate-box"> -->
-					<!-- <span>Podijelite uspomene!</span> -->
-					<!-- <h2>Galerija</h2> -->
-					<!-- <p>Ovdje ćete također moći podijeliti fotografije nakon vjenčanja. Unaprijed zahvaljujemo na tome!</p> -->
-				<!-- </div> -->
-
-				<!-- Napraviti formu za upload slika koje gosti eventualno mogu dodati -->
-			<!-- </div> -->
-		<!-- </div> -->
-	<!-- </div> -->
-
 	<div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
 		<div class="overlay"></div>
 		<div class="container2">
@@ -222,11 +201,8 @@
 				</div>
 			</div>
 			<div class="row animate-box secondrow">
-				<!-- <div class="col-md-10 col-md-offset-1"> -->
 					<div>
               <form id="attendantsForm" class="form">
-				<!-- <div id="attendantsTable" style="display: table; width: 100%;"> -->
-					<!-- <div style="display: table-cell;"> -->
 					<input
 					type="text"
 					id="name"
@@ -234,20 +210,7 @@
 					placeholder="Ime i prezime"
 					style="border-radius: 20px; color:white; height:auto;"
 					/>
-			<!-- </div> -->
-			<!-- <div style="display: table-cell;"> -->
-			<!-- </div> -->
-			<!-- </div> -->
-		 <!-- <div class="d-flex justify-content-between"> -->
-			<!-- <div>
-                <label for="guestCount">Broj gostiju u pratnji:</label>
-			</div> -->
-			<!-- <div>
-				<input type="button" value="-" class="button-minus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="decrementGuest()"/>
-                <label id="guestCount" class="num_people">0</label>
-				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementGuest()"/>
-			</div> -->
-			<!-- </div> -->
+			
                 <div id="inputFields"></div>
 
 				<input type="button" value="+ Dodaj osobu" class="btn btn-default" style="border-radius: 30px; width: auto; margin-top: 5%; height: auto;" data-field="quantity" onclick="incrementGuest()"/>
@@ -283,9 +246,6 @@
 					</div>
 				</div>
 			</div>
-                <!-- <div class="col-md-4 col-sm-4">
-							<button  onclick="showPopUp()" class="btn btn-default btn-block">Gotovo</button>
-						</div> -->
 						<div>
                 <div class = "potvrdidiv">
                   <button
@@ -341,9 +301,6 @@
 
                 function incrementGuest() {
                   guestCount++;
-                //   document.getElementById("guestCount").innerHTML = guestCount;
-				// let inputFieldDiv = document.createElement("div");
-				// inputFieldDiv.setAttribute("style", "display: table-cell;")
                   let inputField = document.createElement("input");
                   let gosti = document.getElementById("inputFields");
                   inputField.setAttribute("type", "text");
@@ -353,7 +310,6 @@
                     "placeholder",
                     "Ime i prezime"
                   );
-				//   inputFieldDiv.appendChild(inputField);
                   gosti.appendChild(inputField);
                 }
 
@@ -369,14 +325,7 @@
                   }
                 }
               </script>
-            <!-- </div> -->
           </div>
-
-			<!-- ime i prezime; plusić ili bolje dodaj osobu botun
-				od toga broj vegeterijanaca; dijete do 3 godine; dijete do 12 godine
-		osobu ista forma (checkboxi itd)-->
-		<!-- na gotovo modal sa ispisanim informacijama kao naš details u docsima 
-		dva botuna: potvrdi i promijeni. potvrdi šalje mail, promijeni zatvara pop-up -->
 		</div>
 	</div>
 
@@ -390,7 +339,6 @@
 					<div class="desc-groom">
 						<h3><img style="width: 20px; padding-left: 0%;" src="images/phone.png"> Antonio</h3>
 						<p style="padding-left: 0%;">099 333 9544</p>
-						<!-- <p><i><img style="width: 30px; margin-left:0px; padding-left: 0%;" src="images/phone.png"></i> 099 333 9544</p> -->
 					</div>
 				</div>
 				<p class="heart text-center"><i class="icon-heart2" ></i></p>
@@ -401,22 +349,14 @@
 					<div class="desc-bride">
 						<h3><img style="width: 20px;" src="images/phone.png"> Jelena</h3>
 						<p style="padding-right: 0%; margin-right: 0px;">097 723 2905</p>
-						<!-- <p><i><img style="width: 30px; margin-right: 0px;" src="images/phone.png"></i> 097 723 2905</p> -->
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 
-	<!-- <div id="fh5co-started" class="fh5co-bg" style="background-image:url(images/img_bg_4.jpg);">
-		<div class="overlay"></div>
-		<div class="container">
-			mapa za parking pored crkve
-		</div>
-	</div> -->
-
 	</div>
-
+	
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
