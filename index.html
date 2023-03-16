@@ -246,6 +246,12 @@
 				<input type="button" value="+" class="button-plus border rounded-circle  icon-shape icon-sm mx-1 lh-0" data-field="quantity" onclick="incrementDjeca12()"/>
 					</div>
 				</div>
+				<div class="d-flex justify-content-between">
+					<div>
+						<input type="checkbox" id="cateringCheckbox"/>
+						<label for="catering" style="color: white;">Dolazimo na catering</label>
+					</div>
+				</div>
 			</div>
 						<div>
                 <div class = "potvrdidiv">
@@ -439,7 +445,8 @@
         body = body + "Name:" + document.getElementById("name").value + "," + imena + "<br/>Broj vegeterijanaca: " + 
 		document.getElementById("vegeterijanciCount").innerHTML + "<br/>Broj djece do 3 godine: " + 
 		document.getElementById("djeca3Count").innerHTML + "<br/>Broj djece do 12 godina: " + 
-		document.getElementById("djeca12Count").innerHTML;
+		document.getElementById("djeca12Count").innerHTML + "<br/>Dolazimo na catering: " +
+		$("#cateringCheckbox").is(":checked");
 
 		// SendWithPostmarkApp(body);
         var message = EmailSend(body);
@@ -574,7 +581,7 @@
 				pozdrav = "Draga kumo!";
 			else if (hello == "Anja" || hello == "Ana" || hello == "Matea" || hello == "Franka")
 				pozdrav = "Draga " + hello + "!";
-			else if (hello == "Karlo" || hello == "Moka" || hello == "Jure" || hello == "Matija" || hello == "Neno" || hello == "Brane" || hello == "Dubi")
+			else if (hello == "Karlo" || hello == "Moka" || hello == "Jure" || hello == "Matija" || hello == "Brane" || hello == "Dubi")
 				pozdrav = "Dragi" + hello + "!";
 			else if (hello == "Vinka")
 				pozdrav = "Draga rodice!";
@@ -586,6 +593,12 @@
 				pozdrav = "Dragi Tadiću!";
 			else if (hello == "Garmaz")
 				pozdrav = "Dragi Filipe!";
+			else if (hello == "Soco")
+				pozdrav = "Dragi Sočo!";
+			else if (hello == "drSanja")
+				pozdrav = "Dragi dr. Sanjo i Ivane!";	
+			else if (hello == "Neno")
+				pozdrav = "Dragi Bruna i Neno!";
 			else if (hello == "Antonio")
 			{
 				pozdrav = "Dragi budući mužu!";
@@ -620,7 +633,6 @@
 			else if(hello == "Sanja i Marin") { pozdrav = pozdrav + "Sanjo & Marine!";}
 			else if(hello == "Mia i Bruno") { pozdrav = pozdrav + "Mia & Bruno!";}
 			else if(hello == "ujac i ujna") { pozdrav = pozdrav + "ujče i ujna!";}
-			else if(hello == "Ana i Soco") { pozdrav = pozdrav + "Ana & Sočo!";}
 			else if(hello == "Andja i Teo") { pozdrav = pozdrav + "Anđo & Teo!";}
 			else if(hello == "Marija i Zvonko") { pozdrav = pozdrav + "Marija i doktore!";}
 			else if(hello == "Tisja i Igor") { pozdrav = pozdrav + "Tisja & Igore!";}
