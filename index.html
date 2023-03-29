@@ -458,31 +458,61 @@
 
 	function EmailSend(body){
 		var result = "OK";
-		Email.send({
-          Host: "smtp.elasticemail.com",
-          Username: "jelenapeko00@gmail.com",
-          Password: "61BBB53FBBC4B8ED93104AB57B93F01C4E88",
-          To: "Jelena.Peko@itsistemi.com",
-          From: "jelenapeko00@gmail.com",
-          Subject: "Potvrda dolaska",
-          Body: body,
-        }).then(function (message) {
-			result = message;
-			if(message == 'OK'){
-			swal({
+
+		var url = 'https://api.elasticemail.com/v2/email/send';
+
+		$.ajax({
+			url : url,
+			type: 'POST',
+			data:{
+				'from': 'jelenapeko00@gmail.com',
+				'apikey': '84CF02461D63431F244EA9C7119C26F10DB18574D0E3D1338A99291F6DB852E1E8DAECABBE88B4ABB9DB145EF2BCF512', //84CF02461D63431F244EA9C7119C26F10DB18574D0E3D1338A99291F6DB852E1E8DAECABBE88B4ABB9DB145EF2BCF512  2D0AE99EA87DBB7440F6A2CF52DA694F1515A71803844C067ADE37DE171E2F41B5E67A3AFDE7E609004CD383B74CEFA0
+				'to' : 'Jelena.Peko@itsistemi.com',
+				'bodyHtml' : body,
+				'isTransactional' : false
+			}
+		}).done(function (response){
+			if(response.success == true)
+			{
+				swal({
   			title: "Hvala!",
   			text: "Potvrda o dolasku poslana!",
   			icon: "success",
 			});
-		}
-		else{
-			swal({
+			}
+			else{
+				swal({
   			title: "Molimo pokušajte ponovno!",
   			text: "Slanje potvrde o dolasku nije uspjelo.",
   			icon: "error",
 			});
-		}
-        });
+			}
+		})
+		// Email.send({
+        //   Host: "smtp.elasticemail.com",
+        //   Username: "jpeko@itsistemi.com",
+        //   Password: "E2ACA228D67189623839DFCDB32C0A803AF9", //   F9C86FCC8BE93C318B12FFB92E186DFAADB6
+        //   To: "Jelena.Peko@itsistemi.com",
+        //   From: "jpeko@itsistemi.com",
+        //   Subject: "Potvrda dolaska",
+        //   Body: body,
+        // }).then(function (message) {
+		// 	result = message;
+		// 	if(message == 'OK'){
+		// 	swal({
+  		// 	title: "Hvala!",
+  		// 	text: "Potvrda o dolasku poslana!",
+  		// 	icon: "success",
+		// 	});
+		// }
+		// else{
+		// 	swal({
+  		// 	title: "Molimo pokušajte ponovno!",
+  		// 	text: "Slanje potvrde o dolasku nije uspjelo.",
+  		// 	icon: "error",
+		// 	});
+		// }
+        // });
 		return result;
 	}  
 
